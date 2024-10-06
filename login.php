@@ -11,7 +11,7 @@
       <div class="maincontainer">
       <div class="bgcontainer">
           <div class="insidebgcontainer">
-            <img class="skclogo" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/73595a0e37c0edf4d6125286074ff7ef948518f5/img/SKC%20Logo.png?raw=true" alt="logo of skc"/>
+            <img class="skclogo" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/73595a0e37c0edf4d6125286074ff7ef948518f5/img/SKC%20LOGO.png?raw=true" alt="logo of skc"/>
             <p class="welcome-to-sports">Welcome to Sports Culture and Arts Portal<br/>SorSU Bulan Campus</p>
             <button type="submit" class="return-to-homepage" name="returnhomepage" id="returnhomepage">Return to Page</button>
           </div>
