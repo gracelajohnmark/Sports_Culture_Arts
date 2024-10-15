@@ -1,11 +1,44 @@
-*{
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Inter:500,600,800");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*link decoration disable*/
+a {
+  text-decoration: none;
+}
+
+/*var root styling global in login*/
+:root {
+  --primary-color: #5faaff;
+  --font-size-medium: 16px;
+  --secondary-color: #ffffff;
+  --hover-color: #3e97ff;
+  --text-color: #000000;
+}
+
+/*body display layout*/
+.body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /*body layout login*/
 .bodyloginpage {
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,7 +47,7 @@
   
 /*outside body layout login*/
   .bodyloginpage .maincontainer {
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
     width: 1358px;
     height: 642px;
     position: relative;
@@ -24,7 +57,7 @@
   .bodyloginpage .bgcontainer {
     position: fixed;
     width: 640px;
-    height: 642px;
+    height: 634px;
     left: 0;
     top: 0;
     background-image: url(https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/cdb7af6549cf68baae7687506594b58b49c621d4/img/Background.png?raw=true);
@@ -59,18 +92,12 @@
     width: 100%;
     font-family: "Inter", Helvetica;
     font-weight: 800;
-    color: #000000;
+    color: var(--text-color);
     font-size: 24px;
     text-align: center;
     letter-spacing: 0;
     line-height: 37px;
     padding-block: 32px;
-  }
-
-/*var root styling global in login*/
-  :root {
-    --primary-color: #5faaff;
-    --font-size-medium: 16px;
   }
 
 /*button 1 inside of background container layout login*/
@@ -86,7 +113,7 @@
     top: 390px;
     left: 86px;
     border-radius: 12px;
-    border: hidden;
+    border: none;
     color: #ffffff;
     font-family: "Inter", Helvetica;
     font-weight: 700;
@@ -97,36 +124,35 @@
 
 /*hovering effect for button 1 layout login*/
   .bodyloginpage .return-to-homepage:hover{
-      background-color: #3e97ff;
+      background-color: var(--hover-color);
   }
 
 /*login form alignment layout login*/
   .bodyloginpage #LoginForm{
     position: fixed;
-    top: 44px;
-    left: 57.8%;
+    top: 40px;
     right: 0px;
   }
 
 /*Text 2 inside of login form layout login*/
   .bodyloginpage h1 {
-    position: fixed;
+    position: absolute;
     width: 112px;
     margin-top: 66px;
-    right: 296px;
+    right: 288px;
     font-family: "Inter", Helvetica;
     font-weight: 800;
-    color: #000000;
+    color: var(--text-color);
     font-size: 28px;
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
+    z-index: 1;
   }
 
 /*login form layout login*/
   .bodyloginpage .formcontainer {
     position: absolute;
-    z-index: -1;
     width: 444px;
     height: 560px;
     background-color: #b9ecff;
@@ -135,21 +161,20 @@
   }
 
 /*username container layout login*/
-  .bodyloginpage .input-groupStudent_id {
-    width: 305px;
-    height: 88px;
-    position: fixed;
-    top: 228px;
-    right: 188px;
-    z-index: 0;
-  }
+.bodyloginpage .input-groupStudent_id {
+  position: relative; /* Ensure the container is positioned relative */
+  width: 305px;
+  height: 88px;
+  top: 190px;
+  right: -78px;
+}
 
 /*username label inside username container layout login*/
   .bodyloginpage .user-name {
-    position: absolute;
+    position: relative;
     align-self: stretch;
     height: 19px;
-    top: -44px;
+    top: -42px;
     bottom: 0px;
     font-family: "Inter", Helvetica;
     font-weight: 600;
@@ -162,48 +187,46 @@
   }
 
 /*username icon inside username container layout login*/
-  .bodyloginpage .studentlogo {
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    left: 39px;
-    top: 12px;
-    object-fit: cover;
-    
-  }
+.bodyloginpage .Studentlogo {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 0px; /* Adjust the left position to align with input padding */
+  top: 8%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  object-fit: cover;
+  z-index: 1;
+}
 
 /*username input inside username container layout login*/
-  .bodyloginpage .input-student-id {
-    position: absolute;
-    width: fit-content;
-    font-family: "Inter", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: normal;
-    display: flex;
-    height: 38px;
-    align-items: center;
-    gap: 18px;
-    padding: 0px 10px 0px 46px;
-    width: 100%;
-    background-color: #ffffff;
-    border: 2px solid;
-    border-color: #808080;
-    z-index: -2;
-    top: -8px;
-    right: 12px;
-  }
+.bodyloginpage .input-student-id {
+  position: relative; /* Change to relative if needed */
+  width: 100%;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  display: flex;
+  height: 38px;
+  align-items: center;
+  gap: 18px;
+  padding: 0px 10px 0px 46px; /* Ensure padding accounts for logo width */
+  background-color: var(--secondary-color);
+  border: 2px solid;
+  border-color: #808080;
+  top: -34px;
+  right: 12px;
+}
 
 /*password container layout login*/
   .bodyloginpage .input-groupPassword {
-    position: fixed;
+    position: relative;
     width: 304px;
     height: 88px;
-    top: 290px;
-    right: 200px;
-    z-index: 1;
+    top: 150px;
+    right: -66px;
   }
 
 /*password label inside password container layout login*/  
@@ -211,7 +234,7 @@
     position: relative;
     align-self: stretch;
     height: 19px;
-    margin-top: -1px;
+    top: 4px;
     bottom: 0px;
     font-family: "Inter", Helvetica;
     font-weight: 600;
@@ -232,31 +255,82 @@
     left: 12px;
     object-fit: cover;
     opacity: 0.5;
+    z-index: 1;
   }
 
 /*password input inside password container layout login*/
-  .bodyloginpage .input-password {
-    position: relative;
-    width: fit-content;
-    font-family: "Inter", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: normal;
-    display: flex;
-    height: 38px;
-    align-items: center;
-    gap: 18px;
-    padding: 0px 10px 0px 42px;
-    width: 100%;
-    background-color: #ffffff;
-    border: 2px solid;
-    border-color: #808080;
-    z-index: -2;
-    top: 10px;
-    right: 0px;
-  }
+.bodyloginpage .input-password {
+  position: relative;
+  width: 100%;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  display: flex;
+  height: 38px;
+  align-items: center;
+  gap: 18px;
+  padding: 0px 10px 0px 42px;
+  background-color: var(--secondary-color);
+  border: 2px solid;
+  border-color: #808080;
+  top: 10px;
+  right: 0px;
+}
+
+/* Position of the show and hide icons absolutely within the input field */
+.bodyloginpage #show-icon{
+  position: absolute;
+  right: 18px;
+  top: 58%;
+  transform: translateY(-50%); 
+  cursor: pointer;
+  width: 20px;
+  height: 16px;
+}
+
+/* Position of the show and hide icons absolutely within the input field */
+.bodyloginpage #hide-icon {
+  position: absolute;
+  right: 18px;
+  top: 58%;
+  transform: translateY(-50%); 
+  cursor: pointer;
+  width: 20px;
+  height: 22px;
+}
+
+/* General error message styling */
+.error-message {
+  color: red;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* show and hide icons for hover within the input field */
+.bodyloginpage #show-icon:hover,
+.bodyloginpage #hide-icon:hover {
+  opacity: 0.8;
+}
+
+/* Specific positioning for username error */
+.bodyloginpage #username-error {
+  position: relative;
+  top: -28px;
+  left: -12px;
+}
+
+/* Specific positioning for password error */
+.bodyloginpage #password-error {
+  position: relative;
+  top: 18px;
+  left: 0;
+}
 
 /*button 2 inside of login form layout login*/
   .bodyloginpage .continue {
@@ -267,30 +341,30 @@
     justify-content: center;
     gap: 10px;
     padding: 10px;
-    position: fixed;
-    top: 446px;
-    right: 280px;
+    position: relative;
+    top: 220px;
+    right: -154px;
     font-family: "Inter", Helvetica;
     font-weight: 700;
     background-color: var(--primary-color);
     font-size: var(--font-size-medium);
     border-radius: 12px;
-    border: hidden;
+    border: none;
     color: #ffffff;
     cursor: pointer;
   }
 
 /*hovering effect for button 2 layout login*/
   .bodyloginpage .continue:hover{
-    background-color: #3e97ff;
+    background-color: var(--hover-color);
   }
 
 /*forgot pass inside of login form layout login*/
   .bodyloginpage .forgotpass {
     position: absolute;
     width: 116px;
-    top: 347px;
-    right: 370px;
+    top: 337px;
+    right: 250px;
     font-family: "Inter", Helvetica;
     font-weight: 600;
     color: #003bff;
@@ -301,31 +375,264 @@
 
 /*body layout login*/
   .bodyloginpage .fb-logo {
-    position: fixed;
+    position: absolute;
     width: 34px;
     height: 34px;
-    top: 516px;
-    right: 190px;
+    top: 476px;
+    right: 60px;
     object-fit: cover;
   }
   
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Inter:500,600,800");
-* {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  @media (max-width: 450px) {
+    .bodyloginpage .formcontainer {
+      position: absolute;
+      width: 360px;
+      height: 400px;
+      background-color: #b9ecff;
+      border-radius: 20px;
+      right: 46px;
+      top: 60px;
+    }
+
+    .bodyloginpage .bgcontainer {
+      position: absolute;
+      width: 450px;
+      height: 524px;
+      left: 0;
+      top: 0;
+      background-image: url(https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/cdb7af6549cf68baae7687506594b58b49c621d4/img/Background.png?raw=true);
+      background-size: cover;
+    }
+
+    .bodyloginpage .fb-logo {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 342px;
+      right: 40px;
+      object-fit: cover;
+    }
+
+    .bodyloginpage h1 {
+      position: absolute;
+      width: 112px;
+      top: 40px;
+      right: 152px;
+      font-family: "Inter", Helvetica;
+      font-weight: 800;
+      color: var(--text-color);
+      font-size: 22px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .bodyloginpage .welcome-to-sports {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-family: "Inter", Helvetica;
+      font-weight: 800;
+      color: var(--text-color);
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 0;
+      line-height: 16px;
+      position: relative;
+      top: -106px;
+      left:-84px;
+    }
+    .bodyloginpage .skclogo {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      top: -80px;
+      left: 68px;
+      object-fit: cover;
+    }
+
+    .bodyloginpage .return-to-homepage{
+      visibility: hidden;
+    }
+    /*username container layout login*/
+    .bodyloginpage .input-groupStudent_id {
+      position: relative; 
+      width: 305px;
+      height: 88px;
+      top: 132px;
+      right: -58px;
+    }
+
+/*username label inside username container layout login*/
+    .bodyloginpage .user-name {
+      position: relative;
+      align-self: stretch;
+      height: 19px;
+      top: -34px;
+      bottom: 0px;
+      font-family: "Inter", Helvetica;
+      font-weight: 600;
+      color: #000000b2;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+      left: -12px;
+    }
+
+/*username icon inside username container layout login*/
+    .bodyloginpage .Studentlogo {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0px; /* Adjust the left position to align with input padding */
+      top: 9%; /* Center vertically */
+      transform: translateY(-50%); /* Center vertically */
+      object-fit: cover;
+      z-index: 1;
+    }
+
+/*username input inside username container layout login*/
+    .bodyloginpage .input-student-id {
+      position: relative; /* Change to relative if needed */
+      width: 86%;
+      font-family: "Inter", Helvetica;
+      font-weight: 500;
+      color: var(--text-color);
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: normal;
+      display: flex;
+      height: 34px;
+      align-items: center;
+      gap: 18px;
+      padding: 0px 10px 0px 46px; /* Ensure padding accounts for logo width */
+      background-color: var(--secondary-color);
+      border: 2px solid;
+      border-color: #808080;
+      top: -29px;
+      right: 12px;
+    }
+
+/*password container layout login*/
+    .bodyloginpage .input-groupPassword {
+      position: relative;
+      width: 304px;
+      height: 88px;
+      top: 86px;
+      right: -46px;
+    }
+
+/*password label inside password container layout login*/  
+    .bodyloginpage .pass-word {
+      position: relative;
+      align-self: stretch;
+      height: 6px;
+      top: 6px;
+      bottom: 0px;
+      font-family: "Inter", Helvetica;
+      font-weight: 600;
+      color: #000000b2;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+      left: 0px;
+    }
+
+/*password icon inside password container layout login*/
+    .bodyloginpage .lockicon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 36px;
+      left: 12px;
+      object-fit: cover;
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+/*password input inside password container layout login*/
+    .bodyloginpage .input-password {
+      position: relative;
+      width: 86%;
+      font-family: "Inter", Helvetica;
+      font-weight: 500;
+      color: var(--text-color);
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: normal;
+      display: flex;
+      height: 34px;
+      align-items: center;
+      gap: 18px;
+      padding: 0px 10px 0px 42px;
+      background-color: var(--secondary-color);
+      border: 2px solid;
+      border-color: #808080;
+      top: 10px;
+      right: 0px;
+    }
+
+/* Position of the show and hide icons absolutely within the input field */
+    .bodyloginpage #show-icon{
+      position: absolute;
+      right: 58px;
+      top: 53%;
+      transform: translateY(-50%); 
+      cursor: pointer;
+      width: 20px;
+      height: 16px;
+    }
+
+/* Position of the show and hide icons absolutely within the input field */
+    .bodyloginpage #hide-icon {
+      position: absolute;
+      right: 58px;
+      top: 53%;
+      transform: translateY(-50%); 
+      cursor: pointer;
+      width: 20px;
+      height: 22px;
+    }
+    .bodyloginpage .continue {
+      display: flex;
+      width: 90px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      position: relative;
+      top: 120px;
+      right: -134px;
+      font-family: "Inter", Helvetica;
+      font-weight: 600;
+      background-color: var(--primary-color);
+      font-size: 12px;
+      border-radius: 12px;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+/*hovering effect for button 2 layout login*/
+.bodyloginpage .continue:hover{
+  background-color: var(--hover-color);
 }
-html,
-body {
-  margin: 0px;
-  height: 100%;
+
+/*forgot pass inside of login form layout login*/
+.bodyloginpage .forgotpass {
+  position: absolute;
+  width: 116px;
+  top: 262px;
+  right: 190px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #003bff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
 }
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
 }
-a {
-  text-decoration: none;
-}
-  
