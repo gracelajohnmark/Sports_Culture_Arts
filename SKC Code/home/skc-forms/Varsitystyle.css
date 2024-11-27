@@ -1,0 +1,1436 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+:root{
+  --primary-color-background: #ffffff;
+  --secondary-color-background: #6dce33;
+  --third-color-text: #000000;
+}
+
+body{
+  display: flex;
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul li{
+  list-style-type: none;
+
+}
+
+ #nav-group{
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color-background);
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+}
+
+ .skc {
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  left: 12px;
+  object-fit: cover;
+  position: relative;
+}
+
+#nav-group h4{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 76px;
+  margin-top: 4px;
+
+}
+ .Logoname-1 {
+  width: 171px;
+  top: 14px;
+  left: 0px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: #950608;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+}
+
+ .Logoname-2 {
+  width: 171px;
+  top: 34px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  margin-left: 4px;
+}
+
+#nav-group ul li{
+  position: absolute;
+  display: flex;
+  left: 246px;
+  top:36px;
+}
+ .homepage {
+  left: 123px;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+ .Sports-menu {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 14px;
+  left: 252px;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+ .athlete-menu {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 13px;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  left: 474px;
+  cursor: pointer;
+}
+
+.vector-wrapper {
+  position: absolute;
+  width: 223px;
+  height: 24px;
+  top: 36px;
+  right: 240px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+
+.search-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  left: 9px;
+}
+
+ .notification-icon {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 36px;
+  right: 158px;
+  cursor: pointer;
+}
+
+ .message-icon {
+  position: relative;
+  width: 24px;
+  height: 22px;
+  top: 12px;
+  right: 106px;
+  cursor: pointer;
+}
+
+ .user-login-icon {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 36px;
+  right: 54px;
+  cursor: pointer;
+}
+
+ .sub-menu-wrap{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 70px;
+  right: 40px;
+  border-radius: 10px;
+  background-color: #d3d3d3;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s;
+  z-index: 10;
+}
+ .sub-menu-wrap.openuser-menu{
+  max-height: 220px;
+}
+ .sub-menu-wrap .userinfo-fullname{
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  top: -27px;
+  left: 72px;
+  text-align: left;
+  position: relative;
+}
+
+ .sub-menu-wrap .userinfo-id{
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  top: -15px;
+  left: 72px;
+  position: relative;
+}
+
+ .sub-menu-wrap .userinfo-type{
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #003bff;
+  font-size: 14px;
+  top: -29px;
+  left:143px;
+  position: relative;
+}
+
+ .user-login-inside-icon{
+  width: 50px;
+  height: 50px;
+  top: 16px;
+  left: 16px;
+  position: relative;
+}
+
+ .sub-menu{
+  width: 220px;
+  height: 220px;
+}
+
+ .sub-menu hr{
+  position: relative;
+  height: 1px;
+  width: 180px;
+  left: 0px;
+  bottom: 24px;
+}
+
+ .user-info{
+  position: relative;
+  white-space: nowrap;
+}
+
+ .sub-menu-link{
+  top:-23px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  bottom: 90px;
+  width: 100%;
+  height: 30px;
+}
+
+
+ .sub-menu-link .icon-container{
+  position: relative;
+  align-items: center;
+  left: 24px;
+}
+
+ .sub-menu-link p{
+  position: relative;
+  width: 84%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  padding-left: 36px;
+  transition: transform 0.5s;
+}
+
+ .sub-menu-link span{
+  font-size: 22px;
+  font-weight:900;
+  color: #000000;
+  transition: transform 0.5s;
+  position: relative;
+  right: 22px;
+}
+
+ .sub-menu-link:hover span{
+  transform: translateX(5px);
+}
+
+ .sub-menu-link:hover p{
+  font-weight: 800;
+}
+
+/*side navigation bar layout*/
+ #side-nav-group{
+  top: 70px;
+  background-color: var(--secondary-color-background);
+  left: 0;
+  max-width: 280px;
+  height: 200vh;
+  padding: 5px 1em;
+  border-block-start: 2px dashed black;
+  border-right: 1px solid rgb(197, 197, 197);
+  box-sizing: border-box;
+  position: fixed;
+  transition: max-width 300ms ease-in-out;
+}
+#side-nav-group.close{
+  padding: 5px;
+  max-width: 60px;
+}
+
+#side-nav-group > ul > li:first-child{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+
+  .sidebar-logo{
+    font-weight: 600;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    padding-left: .8em;
+    padding-top: .8em;
+  }
+}
+
+ #side-nav-group ul li.active a{
+  color: #000000;
+  .navmenu{
+    position: relative;
+  }
+}
+
+#side-nav-group a, #side-nav-group .dropdown-btn #side-nav-group .sideformicon{
+  border-radius: .5em;
+  padding: .5em;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.sub-menus li{
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown-btn{
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  padding: .5em;
+  border-radius: .5em;
+  position: relative;
+}
+
+#side-nav-group img{
+  flex-shrink: 0;
+  fill: #000000;
+}
+
+.sideicon, .sideformicon{
+  width: 20px;
+  height: 22px;
+  position: relative;
+}
+
+#side-nav-group a span, #side-nav-group .dropdown-btn span{
+  flex-grow: 1;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.dropdown-btn span{
+  position: relative;
+  left: 12px;
+}
+
+.form-icon{
+  position: relative;
+  margin-left: 86px;
+}
+
+.navmenu{
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.sideicon{
+  position: relative;
+  top: 4px;
+}
+
+#side-nav-group a:hover, #side-nav-group .dropdown-btn:hover{
+  background-color: #60af72;
+  font-weight: 800;
+}
+
+ #side-nav-group.openuser-menu{
+  max-width: 260px;
+}
+
+#side-nav-group .sub-menus{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+
+  > div{
+    overflow: hidden;
+  }
+}
+
+#side-nav-group .sub-menus.show{
+  grid-template-rows: 1fr;
+}
+
+.dropdown-btn img{
+  transition: 200ms ease;
+}
+
+#side-nav-group .rotate img:last-child{
+  rotate: 180deg;
+}
+
+#sidetoggle-btn{
+  margin-left:auto;
+  border: none;
+  background: none;
+  border-radius: .5em;
+  cursor: pointer;
+  margin-top: .9em;
+  width: 24px;
+  height: 20px;
+
+  img{
+    transition: rotate 150ms ease;
+  }
+}
+
+#sidetoggle-btn:hover{
+  background-color: #60af72;
+}
+#side-nav-group.close + main {
+  margin-left: 60px; /* Adjust when sidebar is closed */
+}
+
+main{
+  position: relative;
+  padding-left: min(20px, 7%);
+  z-index: -1;
+  flex-grow: 1; /* Allow main to grow and fill the space */
+  margin-left: 0px; /* Adjust to match sidebar width */
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.VARSITY-APPLICATION {
+  display: flex;
+  flex-direction: column;
+  height: 2407px;
+  align-items: center;
+  gap: 31px;
+  padding: 65px 0px;
+  position: relative;
+  background-color: #ffffff;
+  overflow-y:auto;
+  top:70px;
+  left: 140px;
+}
+
+.VARSITY-APPLICATION .logo {
+  position: relative;
+  width: 881px;
+  height: 247px;
+}
+
+.VARSITY-APPLICATION .logo-address-of {
+  position: absolute;
+  width: 879px;
+  height: 168px;
+  top: 0;
+  left: 0;
+}
+
+.VARSITY-APPLICATION .ssu {
+  position: absolute;
+  width: 78px;
+  height: 77px;
+  top: 38px;
+  left: -40px;
+  object-fit: cover;
+}
+
+.VARSITY-APPLICATION .overlap-group {
+  position: absolute;
+  width: 790px;
+  height: 168px;
+  top: 0;
+  left: 87px;
+}
+
+.VARSITY-APPLICATION .republic-of-the {
+  position: absolute;
+  width: 737px;
+  top: 0;
+  left: 7px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper {
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.VARSITY-APPLICATION .span {
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+}
+
+.VARSITY-APPLICATION .text-wrapper-2 {
+  font-family: "Inter-Italic", Helvetica;
+  font-style: italic;
+}
+
+.VARSITY-APPLICATION .PNG-bagong-pilipinas {
+  position: absolute;
+  width: 89px;
+  height: 93px;
+  top: 38px;
+  left: 701px;
+  object-fit: cover;
+}
+
+.VARSITY-APPLICATION .skc {
+  position: absolute;
+  width: 81px;
+  height: 80px;
+  top: 38px;
+  left: -40px;
+  object-fit: cover;
+}
+
+.VARSITY-APPLICATION .div {
+  position: absolute;
+  top: 180px;
+  left: 295px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-3 {
+  position: absolute;
+  top: 233px;
+  left: 31px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .name-to-contact-no {
+  position: relative;
+  width: 817px;
+  height: 412px;
+}
+
+.VARSITY-APPLICATION .text-wrapper-4 {
+  position: absolute;
+  top: 6px;
+  left: -10px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-5 {
+  position: absolute;
+  top: 61px;
+  left: -10px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-6 {
+  position: absolute;
+  top: 118px;
+  left: -20px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-7 {
+  position: absolute;
+  top: 221px;
+  left: 215px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-8 {
+  position: absolute;
+  top: 118px;
+  left: 255px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-9 {
+  position: absolute;
+  top: 119px;
+  left: 542px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-10 {
+  position: absolute;
+  top: 381px;
+  left: -20px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-11 {
+  position: absolute;
+  top: 331px;
+  left: -20px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-12 {
+  position: absolute;
+  top: 223px;
+  left: 428px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-13 {
+  position: absolute;
+  top: 221px;
+  left: -20px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-14 {
+  position: absolute;
+  top: 222px;
+  left: 634px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .text-wrapper-15 {
+  position: absolute;
+  top: 6px;
+  left: 497px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.VARSITY-APPLICATION .rectangle {
+  width: 421px;
+  height: 37px;
+  top: 0;
+  left: 69px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-2 {
+  width: 125px;
+  height: 37px;
+  top: 215px;
+  left: 298px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .overlap {
+  position: absolute;
+  width: 169px;
+  height: 37px;
+  top: 112px;
+  left: 370px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-16 {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #615a5a;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+.VARSITY-APPLICATION .rectangle-3 {
+  width: 109px;
+  height: 37px;
+  top: 113px;
+  left: 674px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .div-wrapper {
+  position: absolute;
+  width: 166px;
+  height: 37px;
+  top: 375px;
+  left: 122px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-17 {
+  position: absolute;
+  width: 150px;
+  top: 5px;
+  left: 6px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #615a5a;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  visibility: hidden;
+}
+
+.VARSITY-APPLICATION .rectangle-4 {
+  width: 635px;
+  height: 37px;
+  top: 325px;
+  left: 147px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-5 {
+  width: 102px;
+  height: 37px;
+  top: 215px;
+  left: 518px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .overlap-2 {
+  position: absolute;
+  width: 102px;
+  height: 102px;
+  top: 218px;
+  left: 119px;
+}
+
+.VARSITY-APPLICATION .rectangle-6 {
+  width: 98px;
+  height: 37px;
+  top: 0;
+  left: -6px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .o-o-a-a-b-b-AB-AB {
+  position: absolute;
+  width: 102px;
+  top: 6px;
+  left: 0;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #615a5a;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  visibility: hidden;
+}
+
+.VARSITY-APPLICATION .overlap-3 {
+  position: absolute;
+  width: 66px;
+  height: 37px;
+  top: 215px;
+  left: 685px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-18 {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #615a5a;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+.VARSITY-APPLICATION .rectangle-7 {
+  width: 688px;
+  height: 37px;
+  top: 53px;
+  left: 95px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-8 {
+  width: 199px;
+  height: 37px;
+  top: 0;
+  left: 584px;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .overlap-4 {
+  position: absolute;
+  width: 171px;
+  height: 104px;
+  top: 111px;
+  left: 85px;
+}
+
+.VARSITY-APPLICATION .rectangle-9 {
+  width: 171px;
+  height: 39px;
+  top: 0;
+  left: -10px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+  border-radius: 12px;
+}
+
+.VARSITY-APPLICATION .male-female-LGBT {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #615a5a;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  visibility: hidden;
+}
+
+.VARSITY-APPLICATION .sports-choices {
+  position: relative;
+  width: 782px;
+  height: 368px;
+}
+
+.VARSITY-APPLICATION .list-below-are-the {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Italic", Helvetica;
+  font-weight: 400;
+  font-style: italic;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-19 {
+  position: absolute;
+  top: 97px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-10 {
+  width: 131px;
+  height: 27px;
+  top: 93px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-11 {
+  width: 131px;
+  height: 27px;
+  top: 93px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-12 {
+  width: 131px;
+  height: 27px;
+  top: 124px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-13 {
+  width: 131px;
+  height: 27px;
+  top: 155px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-14 {
+  width: 131px;
+  height: 27px;
+  top: 186px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-15 {
+  width: 131px;
+  height: 27px;
+  top: 217px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-16 {
+  width: 131px;
+  height: 27px;
+  top: 248px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-17 {
+  width: 131px;
+  height: 27px;
+  top: 279px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .rectangle-18 {
+  width: 131px;
+  height: 27px;
+  top: 310px;
+  left: 373px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-20 {
+  position: absolute;
+  top: 128px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-19 {
+  width: 131px;
+  height: 27px;
+  top: 124px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-21 {
+  position: absolute;
+  top: 159px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-20 {
+  width: 131px;
+  height: 27px;
+  top: 155px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-22 {
+  position: absolute;
+  top: 190px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-21 {
+  width: 131px;
+  height: 27px;
+  top: 186px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-23 {
+  position: absolute;
+  top: 221px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-22 {
+  width: 131px;
+  height: 27px;
+  top: 217px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-24 {
+  position: absolute;
+  top: 252px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-23 {
+  width: 131px;
+  height: 27px;
+  top: 248px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-25 {
+  position: absolute;
+  top: 283px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-24 {
+  width: 131px;
+  height: 27px;
+  top: 279px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-26 {
+  position: absolute;
+  top: 314px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-25 {
+  width: 131px;
+  height: 27px;
+  top: 310px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-27 {
+  position: absolute;
+  top: 345px;
+  left: 180px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .rectangle-26 {
+  width: 131px;
+  height: 27px;
+  top: 341px;
+  left: 42px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.VARSITY-APPLICATION .text-wrapper-28 {
+  position: absolute;
+  top: 97px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-29 {
+  position: absolute;
+  top: 128px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-30 {
+  position: absolute;
+  top: 159px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-31 {
+  position: absolute;
+  top: 190px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-32 {
+  position: absolute;
+  top: 221px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-33 {
+  position: absolute;
+  top: 252px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-34 {
+  position: absolute;
+  top: 283px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-35 {
+  position: absolute;
+  top: 314px;
+  left: 511px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.VARSITY-APPLICATION .text-wrapper-36 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
