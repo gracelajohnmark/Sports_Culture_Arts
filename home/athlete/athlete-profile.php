@@ -22,9 +22,9 @@ $firstLetterFirstname = substr($firstname, 0, 1);
     <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sports-style.css"/>
-    <script type="text/javascript" src="sportsscript.js" defer></script>
-    <title>Sport Equipments | SKC Bulan Portal</title>
+    <link rel="stylesheet" href="athletestyle.css"/>
+    <script type="text/javascript" src="athletescript.js" defer></script>
+    <title>Athlete Profile | SKC Bulan Portal</title>
   </head>
   <body>
           <nav id="nav-group" class="navcontainer">
@@ -37,10 +37,10 @@ $firstLetterFirstname = substr($firstname, 0, 1);
         <a href="../homepage.php" class="homepage">Home</a>
       </li>
       <li>
-        <a href="../sports-equipment.php" class="Sports-menu">Sports Equipments</a>
+        <a href="../sports/sports-equipment.php" class="Sports-menu">Sports Equipments</a>
       </li>
       <li>
-        <a href="../athlete/athlete-profile.php" class="athlete-menu">Athelete Profile</a>
+        <a href="../athlete-profile.php" class="athlete-menu">Athelete Profile</a>
       </li>
     </ul>
     <img class="notification-icon"
@@ -75,7 +75,8 @@ $firstLetterFirstname = substr($firstname, 0, 1);
             <span>></span>
           </a>
         <?php endif; ?>
-        <a href="../../logout.php?redirect=home/sports/sports-equipment.php" class="sub-menu-link">
+        <a href="../../logout.php?redirect=home/athlete/athlete-profile.php" name="action" value="logout" onclick="preventBack();"
+          class="sub-menu-link">
           <img class="icon-container"
             src="../../img/logout-icon.svg"
             alt="">
@@ -167,90 +168,75 @@ $firstLetterFirstname = substr($firstname, 0, 1);
       </li>
     </ul>
   </aside>
-<main>
-             <div class="container">
-  <header class="header">
-    <h1 contenteditable="false" id="title">SKC Sports Equipment SORSU-BC</h1>
-    <button onclick="toggleEdit()">Edit</button>
-  </header>
-
-  <div class="stats">
-    <div>
-      <h3><input type="number" id="allEquipment" value="200" disabled></h3>
-      <p>All Equipment</p>
-    </div>
-    <div>
-      <h3><input type="number" id="available" value="90" disabled></h3>
-      <p>Available</p>
-    </div>
-    <div>
-      <h3><input type="number" id="currentlyUsed" value="100" disabled></h3>
-      <p>Currently Used</p>
-    </div>
-    <div>
-      <h3><input type="number" id="damage" value="10" disabled></h3>
-      <p>Damage</p>
-    </div>
-  </div>
-
-  <div class="tabs">
-    <div class="tab active" onclick="showContent('all')">ALL</div>
-    <div class="tab" onclick="showContent('individual')">INDIVIDUAL</div>
-    <div class="tab" onclick="showContent('dual')">DUAL</div>
-    <div class="tab" onclick="showContent('team')">TEAM</div>
-  </div>
-
-  <div class="content active" id="all">
-    <div class="item"><img src="../../img/equipments/arnistick.png" alt="Arnis"><p>Arnis</p></div>
-    <div class="item">
-    <img src="../../img/equipments/../../img/equipments/shotput-ball.png" alt="Athletics">
-    <img src="../../img/equipments/../../img/equipments/javelin-stick.png" alt="Athletics">
-    <img src="../../img/equipments/../../img/equipments/discus-disc.png" alt="Athletics">
-    <p>Athletics</p>
-    </div>
-    <div class="item"><img src="../../img/equipments/shuttlecock.png" alt="Badminton"><p>Badminton</p></div>
-    <div class="item">
-    <img src="../../img/equipments/baseball-ball.png" alt="Baseball/Softball">
-    <img src="../../img/equipments/soccerball.png" alt="Baseball/Softball">
-    <p>Baseball/Softball</p>
-    </div>
-    <div class="item"><img src="../../img/equipments/basketball-ball.png" alt="Basketball"><p>Basketball</p></div>
-    <div class="item"><img src="../../img/equipments/chess.png" alt="Chess"><p>Chess</p></div>
-    <div class="item"><img src="../../img/equipments/takraw-ball.png" alt="Sepak Takraw"><p>Sepak Takraw</p></div>
-    <div class="item"><img src="../../img/equipments/soccerball.png" alt="Soccer"><p>Soccer</p></div>
-    <div class="item"><img src="../../img/equipments/volleyball-ball.png" alt="Volleyball"><p>Volleyball</p></div>
-  </div>
-
-  <div class="content" id="individual">
-    <div class="item"><img src="../../img/equipments/arnistick.png" alt="Arnis"><p>Arnis</p></div>
-    <div class="item">
-    <img src="../../img/equipments/../../img/equipments/shotput-ball.png" alt="Athletics">
-    <img src="../../img/equipments/../../img/equipments/javelin-stick.png" alt="Athletics">
-    <img src="../../img/equipments/../../img/equipments/discus-disc.png" alt="Athletics">
-    <p>Athletics</p></div>
-    <div class="item"><img src="../../img/equipments/shuttlecock.png" alt="Badminton"><p>Badminton</p></div>
-    <div class="item"><img src="../../img/equipments/chess.png" alt="Chess"><p>Chess</p></div>
-    <div class="item"><img src="../../img/equipments/table-tennes.png" alt="Table Tennis"><p>Table Tennis</p></div>
-    <div class="item"><img src="../../img/equipments/soccerball.png" alt="Soccer"><p>Soccer</p></div>
-  </div>
-
-  <div class="content" id="dual">
-    <div class="item"><img src="../../img/equipments/shuttlecock.png" alt="Badminton"><p>Badminton</p></div>
-    <div class="item"><img src="../../img/equipments/table-tennes.png" alt="Table Tennis"><p>Table Tennis</p></div>
-  </div>
-
-  <div class="content" id="team">
-    <div class="item">
-    <img src="../../img/equipments/baseball-ball.png" alt="Baseball/Softball">
-    <img src="../../img/equipments/soccerball.png" alt="Baseball/Softball">
-    <p>Baseball/Softball</p></div>
-    <div class="item"><img src="../../img/equipments/basketball-ball.png" alt="Basketball"><p>Basketball</p></div>
-    <div class="item"><img src="../../img/equipments/takraw-ball.png" alt="Sepak Takraw"><p>Sepak Takraw</p></div>
-    <div class="item"><img src="../../img/equipments/soccerball.png" alt="Soccer"><p>Soccer</p></div>
-    <div class="item"><img src="../../img/equipments/volleyball-ball.png" alt="Volleyball"><p>Volleyball</p></div>
-  </div>
-</div>
-
+          <main>
+             <div class="athlete-profile">
+                  <div class="div">
+                    <div class="overlap">
+                      <div class="overlap-group">
+                        <div class="rectangle"></div>
+                        <div class="text-wrapper">100</div>
+                        <div class="text-wrapper-2">Registered Athlete</div>
+                      </div>
+                      <p class="student-athlete">
+                        <span class="span">Student Athlete Profile Registry<br /></span>
+                        <span class="text-wrapper-3">SORSU-BC</span>
+                      </p>
+                    </div>
+                    <div class="overlap-2">
+                      <div class="text-wrapper-4">Arnis</div>
+                      <img class="arnistick" src="../../img/equipments/arnistick.png" />
+                    </div>
+                    <div class="overlap-3">
+                      <div class="text-wrapper-5">Athletics</div>
+                      <div class="overlap-4">
+                        <img class="discus-disc" src="../../img/equipments/discus-disc.png" />
+                        <img class="javelin-stick" src="../../img/equipments/javelin-stick.png" />
+                        <img class="shotput-ball" src="../../img/equipments/shotput-ball.png" />
+                      </div>
+                    </div>
+                    <div class="overlap-5">
+                      <div class="text-wrapper-6">Badminton</div>
+                      <img class="shuttlecock" src="../../img/equipments/shuttlecock.png" />
+                    </div>
+                    <div class="overlap-6">
+                      <div class="text-wrapper-7">Baseball/Softball</div>
+                      <img class="basketball-ball" src="../../img/equipments/baseball-ball.png" />
+                    </div>
+                    <div class="overlap-7">
+                      <div class="text-wrapper-8">Basketball</div>
+                      <img class="baseball-ball" src="../../img/equipments/basketball-ball.png" />
+                    </div>
+                    <div class="overlap-8">
+                      <div class="text-wrapper-9">Chess</div>
+                      <img class="chess" src="../../img/equipments/chess.png" />
+                    </div>
+                    <div class="overlap-9">
+                      <div class="text-wrapper-10">Sepak Takraw</div>
+                      <img class="takraw-ball" src="../../img/equipments/takraw-ball.png" />
+                    </div>
+                    <div class="overlap-10">
+                      <div class="text-wrapper-11">Takewondo</div>
+                      <img class="takewondo" src="../../img/equipments/takewondo.png" />
+                    </div>
+                    <div class="overlap-11">
+                      <div class="text-wrapper-12">Soccer</div>
+                      <img class="soccerball" src="../../img/equipments/soccerball.png" />
+                    </div>
+                    <div class="overlap-12">
+                      <div class="text-wrapper-13">Volleyball</div>
+                      <img class="volleyballball" src="../../img/equipments/volleyball-ball.png" />
+                    </div>
+                    <div class="overlap-13">
+                      <div class="text-wrapper-14">Table Tennis</div>
+                      <img class="table-tennes" src="../../img/equipments/table-tennes.png" />
+                    </div>
+                    <div class="div-wrapper"><div class="text-wrapper-15">Search...</div></div>
+                    <div class="overlap-group-2"><div class="text-wrapper-16">ALL</div></div>
+                    <div class="overlap-14"><div class="text-wrapper-17">INDIVIDUAL</div></div>
+                    <div class="overlap-15"><div class="text-wrapper-17">TEAM</div></div>
+                    <div class="overlap-16"><div class="text-wrapper-17">DUAL</div></div>
+              </div>
+          </div>
       </main>
   </body>
 </html>

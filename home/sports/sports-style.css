@@ -10,11 +10,8 @@ html, body {
   height: 100%;
   overflow: hidden;
   padding: 0;
-}
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
+  position: relative;
+  z-index: 1;
 }
 
 :root{
@@ -23,205 +20,167 @@ button:focus-visible {
   --third-color-text: #000000;
 }
 
+body{
+  display: flex;
+  height: 100%;
+}
+
 a{
   text-decoration: none;
 }
 
 ul li{
   list-style-type: none;
+
 }
 
-/*Body layout*/
-.bodycontainer {
-  background-color: var(--primary-color-background);
+ #nav-group{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-
-/*outside Body layout*/
-.bodycontainer .maincontainer {
-  background-color: var(--primary-color-background);
-  overflow: hidden;
-  width: 1358px;
-  height: 642px;
-}
-
-.bodycontainer .navcontainer{
-  position:fixed;
-  width: 100%;
-  height: 70px;
-  background-color: var(--secondary-color-background);
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.bodycontainer #nav-group{
-  display: flex;
+  position: fixed;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--secondary-color-background);
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+}
+
+ .skc {
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  left: 12px;
+  object-fit: cover;
   position: relative;
 }
 
-.bodycontainer #nav-group .nav-ul{
-  width: 100%;
-  text-align: right;
-}
-
-.bodycontainer .skc {
-  width: 50px;
-  height: 50px;
-  top: 10px;
-  left: 12px;
-  object-fit: cover;
+#nav-group h4{
   position: absolute;
-}
+  display: flex;
+  flex-direction: column;
+  left: 76px;
+  margin-top: 4px;
 
-.bodycontainer .Logoname-1 {
+}
+ .Logoname-1 {
   width: 171px;
   top: 14px;
-  left: 76px;
+  left: 0px;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   color: #950608;
   font-size: 14px;
   text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
   white-space: nowrap;
   position: relative;
 }
 
-.bodycontainer .Logoname-2 {
+ .Logoname-2 {
   width: 171px;
   top: 34px;
-  left: -82px;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   color: #000000;
   font-size: 14px;
   text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
   position: relative;
+  margin-left: 4px;
 }
 
-.bodycontainer .homepage {
-  left: 380px;
+#nav-group ul li{
   position: absolute;
-  top: 44px;
+  display: flex;
+  left: 246px;
+  top:36px;
+}
+ .homepage {
+  left: 123px;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   color: #ffffff;
   font-size: 13px;
-  text-align: center;
   cursor: pointer;
 }
 
-.bodycontainer .selected-2 {
-  position: absolute;
-  width: 138px;
-  height: 4px;
-  top: 66px;
-  left: 520px;
-  z-index: 1;
-}
-
-.bodycontainer .Sports-menu {
-  width: fit-content;
+ .Sports-menu {
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(15.73, 235.88, 224.87, 0.5) 53.5%, rgba(0, 34, 255, 0.5) 100%);
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   color: #000000;
   font-size: 14px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  left: 510px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  position: absolute;
-  top: 30px;
-  text-decoration: none;
-  cursor: pointer;
-  white-space: nowrap;
+  left: 252px;
   gap: 10px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 4px solid black;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
-.bodycontainer .athlete-menu {
-  width: fit-content;
+ .athlete-menu {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   color: #ffffff;
   font-size: 13px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  left: 720px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
   padding: 10px;
-  position: absolute;
-  top: 32px;
-  text-decoration: none;
+  position: relative;
+  left: 474px;
   cursor: pointer;
 }
-
-.bodycontainer .vector-wrapper {
-  position: absolute;
-  width: 223px;
-  height: 24px;
-  top: 36px;
-  right: 240px;
-  background-color: #d9d9d9;
-  border-radius: 10px;
+.athlete-menu:hover,
+.homepage:hover{
+  background: linear-gradient(180deg, rgba(26, 236, 226, 0.356) 53.5%, rgba(0, 34, 255, 0.329) 100%);
+  font-weight: 800;
+  color: #000000;
+  border-radius: 8px;
+  border-bottom: 4px solid black;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
-.bodycontainer .search-icon {
+ .notification-icon {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 4px;
-  left: 9px;
-}
-
-.bodycontainer .notification-icon {
-  position: relative;
   width: 22px;
   height: 22px;
   top: 36px;
-  right: 112px;
+  right: 158px;
   cursor: pointer;
 }
 
-.bodycontainer .message-icon {
+ .message-icon {
   position: relative;
   width: 24px;
   height: 22px;
-  top: 36px;
-  right: 84px;
+  top: 12px;
+  right: 106px;
   cursor: pointer;
 }
 
-.bodycontainer .user-login-icon {
-  position: relative;
-  width: 22px;
-  height: 22px;
-  top: 36px;
-  right: 54px;
+ .user-login-icon {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 30px;
+  right: 50px;
   cursor: pointer;
+  border: solid;
+  border-radius: 16px;
+  opacity: 0.6;
+  text-align: center;
+  padding-top: 8px;
+  font-size: 14px;
+  font-weight: 800;
 }
 
-.bodycontainer .sub-menu-wrap{
+ .sub-menu-wrap {
   position: absolute;
   display: flex;
   align-items: center;
@@ -232,86 +191,97 @@ ul li{
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.4s;
+  z-index: 10;
 }
-.bodycontainer .sub-menu-wrap.openuser-menu{
+
+.sub-menu-wrap.openuser-menu {
   max-height: 220px;
 }
-.bodycontainer .sub-menu-wrap .userinfo-fullname{
+
+.sub-menu-wrap .username{
+  font-family: "Poppins", sans-serif;
+  width: 50px;
+  height: 50px;
+  top: 16px;
+  left: 16px;
+  position: relative;
+  border: solid;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 14px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.sub-menu-wrap .userinfo-fullname {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #000000;
   font-size: 14px;
-  top: -26px;
-  left:76px;
+  top: -30px;
+  left: 72px;
+  text-align: left;
   position: relative;
 }
 
-.bodycontainer .sub-menu-wrap .userinfo-id{
+.sub-menu-wrap .userinfo-id {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #000000;
   font-size: 14px;
-  text-justify: distribute;
-  top: -22px;
-  left: 76px;
+  top: -20px;
+  left: 72px;
   position: relative;
 }
 
-.bodycontainer .sub-menu-wrap .userinfo-type{
+.sub-menu-wrap .userinfo-type {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #003bff;
   font-size: 14px;
-  top: -36px;
-  left: 148px;
+  top: -34px;
+  left: 140px;
   position: relative;
 }
 
-.bodycontainer .user-login-inside-icon{
-  width: 50px;
-  height: 50px;
-  top: 12px;
-  left: 16px;
-  position: relative;
-}
-
-.bodycontainer .sub-menu{
+.sub-menu {
   width: 220px;
   height: 220px;
 }
 
-.bodycontainer .sub-menu hr{
+.sub-menu hr {
   position: relative;
   height: 1px;
   width: 180px;
   left: 0px;
-  top: -24px;
+  bottom: 24px;
 }
 
-.bodycontainer .user-info{
-  display:flex;
-  flex-direction: column;
+.user-info {
+  position: relative;
+  white-space: nowrap;
 }
 
-.bodycontainer .sub-menu-link{
+.sub-menu-link {
   position: relative;
   align-items: center;
   display: flex;
   flex-direction: row;
   margin: 10px 0;
-  top: -26px;
+  bottom: 90px;
   width: 100%;
   height: 30px;
+  top: -22px
 }
 
 
-.bodycontainer .sub-menu-link .icon-container{
+.sub-menu-link .icon-container {
   position: relative;
   align-items: center;
   left: 24px;
 }
 
-.bodycontainer .sub-menu-link p{
+.sub-menu-link p {
   position: relative;
   width: 84%;
   font-family: "Poppins", sans-serif;
@@ -322,221 +292,637 @@ ul li{
   transition: transform 0.5s;
 }
 
-.bodycontainer .sub-menu-link span{
+.sub-menu-link span {
   font-size: 22px;
-  font-weight:900;
+  font-weight: 900;
   color: #000000;
   transition: transform 0.5s;
   position: relative;
   right: 22px;
 }
 
-.bodycontainer .sub-menu-link:hover span{
+.sub-menu-link:hover span {
   transform: translateX(5px);
 }
 
-.bodycontainer .sub-menu-link:hover p{
+.sub-menu-link:hover p {
   font-weight: 800;
 }
 
-/*side navigation bar layout*/
-.bodycontainer #side-nav-group{
+#side-nav-group {
+  display: flex;
+  flex-direction: column;
   top: 70px;
   background-color: var(--secondary-color-background);
-  position: fixed;
   left: 0;
-  width: 260px;
-  height: 100%;
-  border-block-start: dashed;
+  max-width: 66px;
+  height: 100vh;
+  padding-block: 8px;
+  border-block-start: 2px dashed black;
+  border-right: 1px solid rgb(197, 197, 197);
+  box-sizing: border-box;
+  position: fixed;
+  transition: max-width 300ms ease-in-out;
+
+  .sidebar-logo,
+  .notogglemenu,
+  .notogglemenu1,
+  .backside,
+  .Skcforms,
+  .sub-menus span {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .sidebar-logo{
+    position: relative;
+    left: -36px;
+    top:8px;
+    white-space: nowrap;
+  }
+
+  .notogglemenu{
+    position: relative;
+    left: -130px;
+    top:0px;
+  }
+
+  .notogglemenu1{
+    position: relative;
+    left: -130px;
+    top:0px;
+  }
+  
+  .backside{
+    position: absolute;
+    top: 22px;
+    left: -20px;
+  }
+
+  .sub-menus{
+    position: relative;
+    top:32px;
+    left: 0px;
+  }
+
+  .Skcforms{
+    position: relative;
+    left: -144px;
+    top:10px;
+  }
+
+  .dropdown-btn{
+    position: absolute;
+    left: 0px;
+    top:92px;
+    width: 100%;
+    padding-inline: 32px;
+    padding-block: 10px;
+  }
+
+  .menu-skcform{
+    position: relative;
+    left: -12px;
+  }
+
+  .skcform-dropdown {
+    visibility: visible;
+    position: absolute;
+    transition: left 0.3s ease-in-out;
+    left: 44px;
+    top: 18px;
+  }
+  .sub-menus li {
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding-bottom: 16px;
+    top: 12px;
+    left: 0px;
+  }
+
+  .menu-personal{
+    position: relative;
+    left: 0px;
+    top:0px;
+  }
+  .sub-menus .personal-datamenu{
+    padding-inline: 22px;
+    padding-block: 12px;
+    border-radius: .6em;
+    left: 0px;
+    top:4px;
+  }
+
+  .menu-members{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .member-datamenu{
+    padding-inline: 22px;
+    padding-block: 12px;
+    border-radius: 10px;
+    left: 0px;
+    top:4px;
+  }
+
+  .menu-varsity{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .varsity-datamenu{
+    padding-inline: 22px;
+    padding-block: 12px;
+    border-radius: 10px;
+    left: 0px;
+    top:4px;
+  }
+
+  .menu-athlete{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .athlete-datamenu{
+    padding-inline: 22px;
+    padding-block: 12px;
+    border-radius: 10px;
+    left: 0px;
+    top:4px;
+  }
+  .menu-application{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .application-datamenu{
+    padding-inline: 22px;
+    padding-block: 12px;
+    border-radius: 10px;
+    left: 0px;
+    top:4px;
+  }
+
+  .menu-schedule{
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+  .menu-schedule-container{
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-inline: 22px;
+    border-radius: 10px;
+    top:-8px;
+    left:0px;
+  }
+  .menu-report{
+    position: relative;
+    top: 0px;
+    left: 20px;
+  }
+  .menu-report-container{
+    position: relative;
+    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-inline: 0px;
+    left: 0px;
+    top: 34px;
+    border-radius: 10px;
+  }
+  #sidetoggle-btn{
+    position: relative;
+    padding-bottom: 8px;
+    padding-top: 20px;
+    padding-inline: 23px;
+    border-radius: 10px;
+    top:-8px;
+    left:0px;
+  }
+  .menu-icon{
+    visibility: visible;
+    position: relative;
+    left: 0px;
+    top:0px;
+  }
 }
 
-.bodycontainer .sidenav-ul .sidenav-li-menu .navigation-menu .menu{
-  text-decoration: none;
-  color:var(--third-color-text);
-  font-weight: 600;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  padding: 5px, 0;
-  display: block;
-  text-transform: capitalize;
-  transition: 0.2s ease-out;
-}
-/*menu icon inside side navigation bar layout*/
-.bodycontainer .navmenu {
-  position: absolute;
-  width: 19px;
-  height: 19px;
-  top: 15px;
-  left: 22px;
+#side-nav-group.open {
+  padding-inline: 20px;
+  max-width: 274px;
+
+  .notogglemenu,
+  .notogglemenu1,
+  .Skcforms,
+  .skcform-dropdown,
+  #sidetoggle-btn .backside,
+  .sub-menus span {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #sidetoggle-btn{
+    visibility: visible;
+    position: relative;
+    left: -300px;
+    top:0px;
+  }
+
+  .sidebar-logo {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    left: 0px;
+    top:10px;
+    white-space: nowrap;
+  }
+
+  #sidetoggle-btn .backside {
+    visibility: visible;
+    opacity: 1;
+      position: absolute;
+      padding-inline: 10px;
+      padding-block: 10px;
+      border-radius: .9em;
+      top: 6px;
+      left: 340px;
+  }
+  .sub-menus{
+    position: relative;
+    top: 32px;
+    left: -20px;
+    width: 274px;
+  }
+  .menu-schedule-container{
+    position: relative;
+    top:-8px;
+    left:-20px;
+    width: 274px;
+  }
+  .notogglemenu{
+    position: absolute;
+    left: 56px;
+    top: 14px;
+  }
+
+  .menu-report-container{
+    position: relative;
+    top: 34px;
+    left: -20px;
+    width: 274px;
+  }
+
+  .notogglemenu1{
+    position: relative;
+    left: 20px;
+    top: 0px;
+  }
+
+  .dropdown-btn{
+    position: absolute;
+    top:92px;
+    left: 0px;
+    padding-inline: 22px;
+    padding-block: 10px;
+  }
+  .Skcforms{
+    position: relative;
+    top:0px;
+    left: -2px;
+  }
+  .menu-skcform{
+    position: relative;
+    left: -2px;
+  }
+  .skcform-dropdown{
+    position: absolute;
+    left: 238px;
+    transition: left 200ms ease-in-out;
+    top: 18px;
+  }
+  .menu-personal{
+    position: relative;
+    left: 0px;
+    top:0px;
+  }
+  
+  .sub-menus .personal-datamenu{
+    position: relative;
+    left: 0px;
+    top:4px;
+  }
+
+  .menu-members{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .member-datamenu{
+    position: relative;
+    left: 0px;
+    top:4px;
+  }
+
+  .menu-varsity{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .varsity-datamenu{
+    position: relative;
+    left: 0px;
+    top:4px;
+  }
+
+  .menu-athlete{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .athlete-datamenu{
+    position: relative;
+    left: 0px;
+    top:4px;
+  }
+  .menu-application{
+    position: relative;
+    left: -2px;
+    top:0px;
+  }
+  .sub-menus .application-datamenu{
+    position: relative;
+    left: 0px;
+    top:4px;
+  }
+  .personal-span,
+  .member-span,
+  .varsity-span,
+  .athlete-span,
+  .application-span{
+    position: relative;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity 700ms ease-in-out;
+  }
 }
 
-/*skc icons inside side navigation bar layout*/
-.bodycontainer .skcforms {
-  position: absolute;
-  width: 26px;
-  height: 22px;
-  top: 70px;
-  left: 22px;
+#side-nav-group.close {
+  max-width: 66px;
+  transition: max-width 400ms ease-in-out;
 }
 
-.bodycontainer .sidenav-ul .sidenav-li{
-  list-style-type: none;
-  width: 100px;
-  margin-left: 16px;
-  margin-top: 72px;
-  transition: 0.5s ease;
-}
-
-.bodycontainer .sidenav-ul .sidenav-li-menu{
-  list-style-type: none;
-  width: 100px;
-  margin-left: 16px;
-  margin-top: 12px;
-  transition: 0.5s ease;
-}
-
-.bodycontainer .sidenav-ul .sidenav-li .forms-container{
-  text-decoration: none;
-  color:#000000;
-  font-weight: 600;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  padding: 5px, 0;
-  display: block;
-  text-transform: capitalize;
-  transition: 0.2s ease-out;
-}
-
-/*container layout*/
-.bodycontainer .container {
-  position: absolute;
-  width: 1082px;
-  height: 315px;
-  top: 89px;
-  left: 130px;
-  z-index: -1;
-  background-color: #e7f771;
-}
-
-/*intro inside container layout*/
-.bodycontainer .intro {
-  position: absolute;
-  width: 426px;
-  top: 65px;
-  left: 45px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  color: #000000;
-  font-size: 32px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.bodycontainer h3 {
-  position: absolute;
-  width: 133px;
-  height: 36px;
-  top: 13px;
-  left: 4px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  color: #000000;
-  font-size: 16px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.bodycontainer .be-one-of-our {
-  position: absolute;
-  width: 291px;
-  top: 226px;
-  left: 118px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  color: #000000;
-  font-size: 16px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.bodycontainer .component {
+#side-nav-group>ul>li:first-child {
   display: flex;
-  width: 541px;
-  align-items: center;
-  gap: 102px;
-  position: absolute;
-  top: 0;
-  left: 541px;
-  overflow: hidden;
-}
-
-.bodycontainer .image {
+  justify-content: flex-end;
   position: relative;
-  width: 802px;
-  height: 600px;
-  top:10px;
+
+  .sidebar-logo {
+    font-weight: 600;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    padding-left: .8em;
+    padding-top: .1em;
+    margin-bottom: 14px;
+  }
+  .menu-icon{
+    position: relative;
+    left: 0px;
+    top:0px;
+  }
+}
+  
+.menu-schedule,
+.menu-report,
+.menu-athlete,
+.menu-personal,
+.menu-member,
+.menu-varsity{
+  width: 22px;
+  height: 22px;
 }
 
-.bodycontainer .image-2 {
-  margin-bottom: -221px;
+.menu-icon {
+  width: 20px;
+  height: 18px;
   position: relative;
-  width: 541px;
-  height: 315px;
-  object-fit: cover;
 }
 
-.bodycontainer .text-wrapper-3 {
-  position: absolute;
-  width: 211px;
-  height: 59px;
-  top: 35px;
-  left: 24px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  color: #ffffff;
-  font-size: 36px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
+.menu-skcform{
+  width: 20px;
+  height: 22px;
+  stroke: black;
+  stroke-width: 4;
+  fill:#000000;
 }
 
-.bodycontainer .vector-8 {
-  position: absolute;
-  width: 2px;
-  height: 28px;
-  top: 15px;
-  left: 56px;
-}
 
-.bodycontainer .component-2 {
-  position: absolute;
-  width: 305px;
-  height: 36px;
-  top: 24px;
-  left: 359px;
-}
-
-.bodycontainer .overlap-group-2 {
-  position: absolute;
-  width: 59px;
-  height: 36px;
-  top: 0;
-  left: 1px;
-  border-radius: 8px;
-}
-
-.bodycontainer .text-wrapper-5 {
-  position: relative;
-  width: fit-content;
-  margin-top: -2px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
+#side-nav-group a,
+#side-nav-group .dropdown-btn, 
+#side-nav-group .sideformicon {
   color: #000000;
-  font-size: 13px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1em;
 }
+
+.dropdown-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#side-nav-group img {
+  flex-shrink: 1;
+  fill: #000000;
+}
+
+#side-nav-group a span,
+#side-nav-group .dropdown-btn span {
+  flex-grow: 0;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+#side-nav-group .sub-menus .personal-datamenu:hover,
+#side-nav-group .sub-menus .member-datamenu:hover,
+#side-nav-group .sub-menus .varsity-datamenu:hover,
+#side-nav-group .sub-menus .athlete-datamenu:hover,
+#side-nav-group .sub-menus .application-datamenu:hover,
+#side-nav-group .menu-schedule-container:hover,
+#sidetoggle-btn:hover,
+#sidetoggle-btn .backside:hover,
+#side-nav-group .dropdown-btn:hover,
+#side-nav-group .menu-report-container:hover {
+  font-weight: 800;
+  background-color: #60af72;
+  z-index: 1;
+}
+
+#side-nav-group .sub-menus {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid 300ms ease-in-out;
+  >div {
+    overflow: hidden;
+  }
+}
+
+#side-nav-group .sub-menus.show {
+  grid-template-rows: 1fr;
+}
+
+#side-nav-group .rotate img:last-child {
+  rotate: 180deg;
+}
+
+#sidetoggle-btn {
+  margin-left: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 400ms ease;
+}
+
+#side-nav-group.open+main {
+  margin-left: 90px;
+  transition: margin-left 270ms ease-in-out;
+
+  .container {
+    width: 1060px;
+    left:80px;
+  }
+}
+
+#side-nav-group.close+main {
+  max-width: 66px;
+  position: relative;
+  margin-left: -120px;
+  transition: margin-left 300ms ease-in-out;
+}
+main{
+  position: relative;
+  padding-left: min(20px, 7%);
+  z-index: -1;
+  flex-grow: 1; /* Allow main to grow and fill the space */
+  margin-left: 0px; /* Adjust to match sidebar width */
+  transition: margin-left 300ms ease-in-out; /* Smooth transition */
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+  .container {
+    width: 96%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    top:80px;
+    left: 22px;
+  }
+    .header {
+      background-color: rgb(60, 255, 0);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    .header h1{
+      margin: 0;
+    }
+    .header button {
+      background-color: #fff;
+      color: rgb(60, 255, 0);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: #d4edda;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  .stats div {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  .stats div h3 #allEquipment{
+      position: relative;
+      left:30px;
+      width: 30%;
+  }
+    .stats div h3 #available{
+    position: relative;
+    left: 10px;
+      width: 30%;
+  }
+    .stats div h3 #currentlyUsed{
+        position: relative;
+        left: 30px;
+      width: 30%;
+  }
+    .stats div h3 #damage{
+        position: relative;
+        left: 4px;
+      width: 30%;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .tab {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .tab.active {
+    background-color: #48ff00;
+    color: white;
+  }
+  .content {
+    display: none;
+    text-align: center;
+  }
+  .content.active {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 100px;
+  }
+  .item img {
+    width: 50px;
+    height: 50px;
+  }
+      .hidden {
+      display: none;
+    }

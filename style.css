@@ -60,7 +60,7 @@ a {
     height: 634px;
     left: 0;
     top: 0;
-    background-image: url(https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/cdb7af6549cf68baae7687506594b58b49c621d4/img/Background.png?raw=true);
+    background-image: url(img/login/Background.svg);
     background-size: cover;
     background-position: 50% 50%;
   }
@@ -97,29 +97,8 @@ a {
     text-align: center;
     letter-spacing: 0;
     line-height: 37px;
-    padding-block: 32px;
-  }
-
-/*button 1 inside of background container layout login*/
-  .bodyloginpage .return-to-homepage{
-    display: flex;
-    width: 180px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    position: absolute;
-    top: 390px;
-    left: 86px;
-    border-radius: 12px;
-    border: none;
-    color: #ffffff;
-    font-family: "Inter", Helvetica;
-    font-weight: 700;
-    background-color: var(--primary-color);
-    font-size: var(--font-size-medium);
-    cursor: pointer;
+    top: 32px;
+    position: relative;
   }
 
 /*hovering effect for button 1 layout login*/
@@ -289,6 +268,7 @@ a {
   cursor: pointer;
   width: 20px;
   height: 16px;
+  opacity: 0.8; 
 }
 
 /* Position of the show and hide icons absolutely within the input field */
@@ -300,6 +280,7 @@ a {
   cursor: pointer;
   width: 20px;
   height: 22px;
+  opacity: 0.8;
 }
 
 /* General error message styling */
@@ -328,8 +309,9 @@ a {
 /* Specific positioning for password error */
 .bodyloginpage #password-error {
   position: relative;
-  top: 18px;
+  top: 16px;
   left: 0;
+  padding-bottom: 12px;
 }
 
 /*button 2 inside of login form layout login*/
@@ -363,7 +345,7 @@ a {
   .bodyloginpage .forgotpass {
     position: absolute;
     width: 116px;
-    top: 337px;
+    top: 334px;
     right: 250px;
     font-family: "Inter", Helvetica;
     font-weight: 600;
@@ -383,24 +365,20 @@ a {
     object-fit: cover;
   }
   
-  @media (max-width: 450px) {
+   @media (max-width: 425px) {
     .bodyloginpage .formcontainer {
       position: absolute;
-      width: 360px;
-      height: 400px;
-      background-color: #b9ecff;
+      width: 290px;
+      height: 446px;
       border-radius: 20px;
-      right: 46px;
-      top: 60px;
+      right: 36px;
+      top: 125px;
     }
 
     .bodyloginpage .bgcontainer {
       position: absolute;
-      width: 450px;
-      height: 524px;
-      left: 0;
-      top: 0;
-      background-image: url(https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/cdb7af6549cf68baae7687506594b58b49c621d4/img/Background.png?raw=true);
+      width: 200%;
+      height: 200%;
       background-size: cover;
     }
 
@@ -408,7 +386,7 @@ a {
       position: absolute;
       width: 24px;
       height: 24px;
-      top: 342px;
+      top: 382px;
       right: 40px;
       object-fit: cover;
     }
@@ -416,8 +394,8 @@ a {
     .bodyloginpage h1 {
       position: absolute;
       width: 112px;
-      top: 40px;
-      right: 152px;
+      top: 125px;
+      right: 106px;
       font-family: "Inter", Helvetica;
       font-weight: 800;
       color: var(--text-color);
@@ -430,26 +408,26 @@ a {
     .bodyloginpage .welcome-to-sports {
       display: flex;
       justify-content: center;
-      align-items: center;
-      width: 100%;
       font-family: "Inter", Helvetica;
       font-weight: 800;
       color: var(--text-color);
-      font-size: 16px;
+      font-size: 18px;
       text-align: center;
       letter-spacing: 0;
       line-height: 16px;
       position: relative;
-      top: -106px;
-      left:-84px;
+      top: -56px;
+      right: 60px;
+      width: 60%;
+
     }
     .bodyloginpage .skclogo {
-      position: relative;
-      width: 36px;
-      height: 36px;
-      top: -80px;
-      left: 68px;
-      object-fit: cover;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    top: -60px;
+    left: 14px;
+    object-fit: cover;
     }
 
     .bodyloginpage .return-to-homepage{
@@ -460,8 +438,8 @@ a {
       position: relative; 
       width: 305px;
       height: 88px;
-      top: 132px;
-      right: -58px;
+      top: 152px;
+      right: -44px;
     }
 
 /*username label inside username container layout login*/
@@ -496,7 +474,7 @@ a {
 /*username input inside username container layout login*/
     .bodyloginpage .input-student-id {
       position: relative; /* Change to relative if needed */
-      width: 86%;
+      width: 74%;
       font-family: "Inter", Helvetica;
       font-weight: 500;
       color: var(--text-color);
@@ -520,8 +498,8 @@ a {
       position: relative;
       width: 304px;
       height: 88px;
-      top: 86px;
-      right: -46px;
+      top: 104px;
+      right: -32px;
     }
 
 /*password label inside password container layout login*/  
@@ -556,7 +534,7 @@ a {
 /*password input inside password container layout login*/
     .bodyloginpage .input-password {
       position: relative;
-      width: 86%;
+      width: 74%;
       font-family: "Inter", Helvetica;
       font-weight: 500;
       color: var(--text-color);
@@ -567,7 +545,7 @@ a {
       height: 34px;
       align-items: center;
       gap: 18px;
-      padding: 0px 10px 0px 42px;
+      padding: 0px 34px 0px 42px;
       background-color: var(--secondary-color);
       border: 2px solid;
       border-color: #808080;
@@ -578,23 +556,25 @@ a {
 /* Position of the show and hide icons absolutely within the input field */
     .bodyloginpage #show-icon{
       position: absolute;
-      right: 58px;
+      right: 88px;
       top: 53%;
       transform: translateY(-50%); 
       cursor: pointer;
       width: 20px;
       height: 16px;
+      opacity: 0.6;
     }
 
 /* Position of the show and hide icons absolutely within the input field */
     .bodyloginpage #hide-icon {
       position: absolute;
-      right: 58px;
+      right: 88px;
       top: 53%;
       transform: translateY(-50%); 
       cursor: pointer;
       width: 20px;
       height: 22px;
+      opacity: 0.6;
     }
     .bodyloginpage .continue {
       display: flex;
@@ -605,8 +585,8 @@ a {
       gap: 10px;
       padding: 10px;
       position: relative;
-      top: 120px;
-      right: -134px;
+      top: 140px;
+      right: -104px;
       font-family: "Inter", Helvetica;
       font-weight: 600;
       background-color: var(--primary-color);
@@ -626,13 +606,36 @@ a {
 .bodyloginpage .forgotpass {
   position: absolute;
   width: 116px;
-  top: 262px;
-  right: 190px;
+  top: 278px;
+  right: 132px;
   font-family: "Inter", Helvetica;
   font-weight: 600;
   color: #003bff;
   font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
+}
+
+.error-message {
+  color: red;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.bodyloginpage #username-error {
+  position: relative;
+  top: -26px;
+  left: -12px;
+}
+
+/* Specific positioning for password error */
+.bodyloginpage #password-error {
+  position: relative;
+  top: 12px;
+  left: 0;
+  padding-bottom: 12px;
 }
 }

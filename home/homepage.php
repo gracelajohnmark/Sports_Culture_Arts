@@ -1,124 +1,188 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['Student_id'])) {
-      header("Location: login.php"); // Redirect if not logged in
-      exit();
-  }
+session_start();
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+if (!isset($_SESSION['Student_id'])) {
+  header("Location: ../index.php");
+  exit();
+}
+
+$lastname = $_SESSION['Lastname'];
+$firstname = $_SESSION['Firstname'];
+
+$firstLetterLastname = substr($lastname, 0, 1);
+$firstLetterFirstname = substr($firstname, 0, 1);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homestyle.css"/>
-    <title>SKC Bulan Campus Home Page</title>
-  </head>
-  <body>
-    <div class="bodycontainer">
-      <div class="maincontainer">
-      <div class="navcontainer">
-          <nav id="nav-group">
-            <img class="skc" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/45d23ffca769b2d9430ba3120f1c5cf69dc9b6c4/img/SKC%20LOGO.png?raw=true" />
-            <h4 class="Logoname-1">Sorsogon State University</h4>
-            <h4 class="Logoname-2">Sports Culture & Arts</h4> 
-              <ul class="nav-ul">
-                <li class="nav-li">
-                  <a href="homepage.php" class="homepage">Home</a>
-                  <img class="selected-1" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/0d1dd55776e32e4c51f7505e4fa851fc0c08d70f/img/selected%202.png?raw=true" />
-                </li>
-                <li>
-                  <a href="sports/sports-equipment.php" class="Sports-menu">Sports Equipments</a>
-                </li>
-                <li>
-                  <a href="#" class="athlete-menu">Athelete Profile</a>
-                </li>
-              </ul>
-            <img class="notification-icon" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/cdb7af6549cf68baae7687506594b58b49c621d4/img/notification%20icon.png?raw=true" />
-            <img class="message-icon" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/ec6e3c09be58d3e17a5e649e2f78f4f2079dda41/img/message%20icon.png?raw=true" />
-            <img class="user-login-icon" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/ec6e3c09be58d3e17a5e649e2f78f4f2079dda41/img/user%20login%20icon.png?raw=true" onclick="toggleMenu()" />
-            <div class="sub-menu-wrap" id="subMenu">
-              <div class="sub-menu">
-                <div class="user-info">
-                <img class="user-login-inside-icon" src="https://c.animaapp.com/w7WS4Fj2/img/vector-8.svg" />
-                <h6 class="userinfo-fullname"><?= $_SESSION['Fullname'] ?></h6>
-                <h6 class="userinfo-id"><?= $_SESSION['Student_id'] ?></h6>
-                <h6 class="userinfo-type"><?=$_SESSION['Usertype']?></h6>
-                </div>
-                <hr>
-                <a href="#" class="sub-menu-link">
-                  <img class="icon-container" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/010a30821019ac5406a8b227c40e2a1e016e6bd2/img/edit%20profile-icon.png?raw=true" alt="">
-                  <p>Edit Profile</p>
-                  <span>></span>
-                </a>
-                <a href="#" class="sub-menu-link">
-                  <img class="icon-container" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/010a30821019ac5406a8b227c40e2a1e016e6bd2/img/settings-icon.png?raw=true" alt="">
-                  <p>Settings</p>
-                  <span>></span>
-                </a>
-                <a href="../login.php" class="sub-menu-link">
-                  <img class="icon-container" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/41b494d794e93a67976f35ad044cd988655f3943/img/Logout-icon.png?raw=true" alt="">
-                  <p>Logout</p>
-                  <span>></span>
-                </a>
-                </div> 
-                </div>
-                </nav>
-            </div>
-        <div class="sidenavbargroup">
-        <aside id="side-nav-group">
-          <ul class="sidenav-ul">
-            <li>
-              <span class="sidebar-logo">SKC Portal</span>
-              <button id="sidetoggle-btn">
-              <img class="navmenu" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/445c8a15a86abbc49aeffc2bb7655b2d593f07fa/img/Navigation%20M.png?raw=true"/>
-              </button>
-            </li>
-            <li class="sidenav-li-menu">
-              <a href="homepage.php" class="navigation-menu">
-                <span class="menu">Menu</span>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="homestyle.css" />
+  <script type="text/javascript" src="homepagescript.js" defer></script>
+  <title>Home Page | SKC Bulan Portal</title>
+</head>
+
+<body>
+  <nav id="nav-group" class="navcontainer">
+    <img class="skc"
+      src="../img/SKC LOGO.svg" />
+    <h4 class="Logoname-1">Sorsogon State University</h4>
+    <h4 class="Logoname-2">Sports Culture & Arts</h4>
+    <ul>
+      <li>
+        <a href="homepage.php" class="homepage">Home</a>
+      </li>
+      <li>
+        <a href="sports/sports-equipment.php" class="Sports-menu">Sports Equipments</a>
+      </li>
+      <li>
+        <a href="athlete/athlete-profile.php" class="athlete-menu">Athelete Profile</a>
+      </li>
+    </ul>
+    <img class="notification-icon"
+      src="../img/notification-icon.svg" />
+    <img class="message-icon"
+      src="../img/message-icon.svg" />
+    <h6 class="user-login-icon" onclick="toggleMenu()">
+      <?= htmlspecialchars($firstLetterFirstname) . htmlspecialchars($firstLetterLastname) ?>
+    </h6>
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+        <h6 class="username"><?= htmlspecialchars($firstLetterFirstname) . htmlspecialchars($firstLetterLastname) ?></h6>
+          <h6 class="userinfo-fullname"><?= $_SESSION['Fullname'] ?></h6>
+          <h6 class="userinfo-id"><?= $_SESSION['Student_id'] ?></h6>
+          <h6 class="userinfo-type"><?= $_SESSION['Usertype'] ?></h6>
+        </div>
+        <hr>
+        <a href="#" class="sub-menu-link">
+          <img class="icon-container"
+            src="../img/Edit-profile-icon.svg"
+            alt="">
+          <p>Edit Profile</p>
+          <span>></span>
+        </a>
+        <?php if ($_SESSION['Usertype'] == 'Admin'): ?>
+          <a href="#" class="sub-menu-link">
+            <img class="icon-container"
+              src="../img/settings-icon.svg"
+              alt="">
+            <p>Settings</p>
+            <span>></span>
+          </a>
+        <?php endif; ?>
+        <a href="../logout.php?redirect=home/homepage.php"
+          class="sub-menu-link">
+          <img class="icon-container"
+            src="../img/logout-icon.svg"
+            alt="">
+          <p>Logout</p>
+          <span>></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+    <aside id="side-nav-group">
+    <ul>
+      <li class="menu-toggle">
+        <span class="sidebar-logo">SKC Portal</span>
+        <button onclick=toggleSidebar() id="sidetoggle-btn">
+          <img class="menu-icon"
+            src="../img/Menu-icon.svg" />
+          <img class="backside"
+            src="../img/back-icon.svg">
+        </button>
+      </li>
+      <li class="menu-schedule-container">
+        <a href="#">
+          <img class="menu-schedule"
+            src="../img/schedule-icon.svg" />
+          <span class="notogglemenu">Schedule</span>
+        </a>
+      </li>
+      <li class="sidenav-li">
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <img class="menu-skcform"
+            src="../img/skc-form-icon.svg"
+            alt="">
+          <span class="Skcforms">SKC forms</span>
+          <img class="skcform-dropdown"
+            src="../img/Dropdown-button.svg"
+            alt="dropdown button">
+        </button>
+        <ul class="sub-menus">
+          <div>
+            <li class="personal-datamenu">
+              <a href="skc-forms/Personal-Data.php">
+                <img class="menu-personal"
+                  src="../img/PersonalData-icon.svg"
+                  alt="">
+                <span class="personal-span">Personal Data</span>
               </a>
             </li>
-            <li class="sidenav-li">
-              <button class="dropdown-btn">
-                <img class="skcforms" src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/445c8a15a86abbc49aeffc2bb7655b2d593f07fa/img/form.png?raw=true" alt="all types of skc forms"/>
-                <span>SKC forms</span>
-                <img src="https://github.com/gracelajohnmark/Sports_Culture_Arts/blob/45d23ffca769b2d9430ba3120f1c5cf69dc9b6c4/img/dropdown%20button.png?raw=true" alt="dropdown button">
-              </button>
-              <ul class="sub-menus">
-                <li>
-                  <img src="" alt="">
-                  <a href="#">Personal Data</a>
-                </li>
-                <li>
-                  <a href="#">Member's Profile</a>
-                </li>
-                <li>
-                  <a href="#">Varsity Application Form</a>
-                </li>
-                <li>
-                  <a href="#">Athlete Registration Form</a>
-                </li>
-                <li>
-                  <a href="#">Application for Sports Club</a>
-                </li>
-              </ul>
+            <li class="member-datamenu">
+              <a href="skc-forms/Member's-Profile.php">
+                <img class="menu-members"
+                  src="../img/member's profile-icon.svg"
+                  alt="">
+                <span class="member-span">Member's Profile</span>
+              </a>
             </li>
-          </ul>
-          </aside>
-          <div class="container">
-            <p class="intro">Welcome to Sports Culture and Arts SorSU Bulan Campus</p>
-            <h6 class="username-fullname">Welcome Back! <?= $studentid = $_SESSION['Fullname'] ?></h6>
-            <p class="be-one-of-our">Be a part of our organization and reunited as part of SorSU SKC</p>
-            <iframe class="image" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F110102590399937%2Fvideos%2F465134592298985%2F&show_text=false&width=560&t=0" width="560" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" autoplay="true"; clipboard-write; encrypted-media; picture-in-picture; web-share allowFullScreen="true"></iframe>
+            <li class="varsity-datamenu">
+              <a href="skc-forms/Varsity-Application-Form.php">
+                <img class="menu-varsity"
+                  src="../img/VarsityApplication-icon.svg"
+                  alt="">
+                <span class="varsity-span">Varsity Application Form</span>
+              </a>
+            </li>
+            <li class="athlete-datamenu">
+              <a href="skc-forms/Athlete-Registration-Form.php">
+                <img class="menu-athlete"
+                  src="../img/Athlete RF.svg"
+                  alt="">
+                <span class="athlete-span">Athlete Registration Form</span>
+              </a>
+            </li>
+            <li class="application-datamenu">
+              <a href="#">
+                <img class="menu-application"
+                  src="../img/ApplicationForSportsClub-icon.svg"
+                  alt="">
+                <span class="application-span">Application for Sports Club</span>
+              </a>
+            </li>
           </div>
-          </div>
-          </div>
-          </div>
-      <script>
-        let subMenu = document.getElementById("subMenu");
-        function toggleMenu(){
-          subMenu.classList.toggle("openuser-menu");
-        }
-      </script>
-  </body>
+        </ul>
+      </li>
+      <li class="menu-report-container">
+        <a href="#" class="no">
+          <img class="menu-report"
+            src="../img/reports-icon.svg" />
+          <span class="notogglemenu1">Reports</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <main>
+    <div class="container">
+      <h6 class="announce">Announcement</h6>
+      <p class="intro">Welcome to Sports Culture and Arts SorSU Bulan Campus</p>
+      <h6 class="username-fullname">Welcome Back! <?= $studentid = $_SESSION['Fullname'] ?></h6>
+      <p class="be-one-of-our">Be a part of our organization and reunited as part of SorSU SKC</p>
+      <iframe class="image"
+        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F110102590399937%2Fvideos%2F465134592298985%2F&show_text=false&width=560&t=0"
+        width="560" height="318" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allowFullScreen="true"></iframe>
+    </div>
+  </main>
+</body>
+
 </html>
