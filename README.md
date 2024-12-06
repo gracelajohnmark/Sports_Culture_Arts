@@ -1,5 +1,6 @@
-# Sports_Culture_Art 
+# Sports_Culture_Art
 
 accomplishment
-    #login page done but not completely
-    #home page not done but working on it 
+#login page done
+#home page done but not completely, need to add more features, like announcement.
+#settings page done but not completely, need to add more features, like edit announcement, edit athlete profile. edit and delete for account user are not done. still need to add edit and delete for account user.
